@@ -14,11 +14,11 @@ class ZippingTest extends TestCase
     {
         $collection1 = collect([1,2,3]);
         $collection2 = collect([4,5,6]);
-        $collection3 = $collection1->zip($collection2);
-        assertEquals([
-            collect([1,4]),
-            collect([2,5]),
-            collect([3,6])
+        $collection3 = $collection2->zip($collection1);
+        $this->assertEquals([
+            collect([4,1]),
+            collect([5,2]),
+            collect([6,3])
         ], $collection3->all());
     }
 }
