@@ -21,4 +21,11 @@ class ZippingTest extends TestCase
             collect([6,3])
         ], $collection3->all());
     }
+
+    public function testJoin(){
+        $collection = collect(["Haris", "dono", "dini", "dana"]);
+        assertEquals("Haris-dono-dini-dana", $collection->join("-"));
+        assertEquals("Haris-dono-dini_dana", $collection->join("-", "_"));
+        assertEquals("Haris dono dini yoi gasih dana", $collection->join(" ", " yoi gasih "));
+    }
 }
