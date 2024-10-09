@@ -4,6 +4,8 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 
+use function PHPUnit\Framework\assertEquals;
+
 class ChunkTest extends TestCase
 {
     public function testChunk()
