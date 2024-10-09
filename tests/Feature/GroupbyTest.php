@@ -23,7 +23,7 @@ class GroupbyTest extends TestCase
                 "Departemen" => "HR",
             ],
         ]);
-        $result = $collection->groupBy("Departemen");
+        $result = $collection->groupBy("Departemen")->values();
         assertEquals([
             "IT" => [
                 [
@@ -41,6 +41,6 @@ class GroupbyTest extends TestCase
                     "Departemen" => "HR",
                 ],
             ]
-        ], $result->toArray());
+        ], $result->all());
     }
 }
